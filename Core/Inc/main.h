@@ -65,20 +65,30 @@ void Error_Handler(void);
 #define USART_RX_GPIO_Port GPIOA
 #define LD2_Pin GPIO_PIN_5
 #define LD2_GPIO_Port GPIOA
-#define Busy_Pin GPIO_PIN_6
-#define Busy_GPIO_Port GPIOC
-#define sound_1_Pin GPIO_PIN_7
-#define sound_1_GPIO_Port GPIOC
-#define sound_2_Pin GPIO_PIN_8
-#define sound_2_GPIO_Port GPIOC
-#define sound_3_Pin GPIO_PIN_9
-#define sound_3_GPIO_Port GPIOC
+#define ses5_Pin GPIO_PIN_5
+#define ses5_GPIO_Port GPIOC
+#define ses1_Pin GPIO_PIN_1
+#define ses1_GPIO_Port GPIOB
+#define ses4_Pin GPIO_PIN_13
+#define ses4_GPIO_Port GPIOB
+#define ses3_Pin GPIO_PIN_14
+#define ses3_GPIO_Port GPIOB
+#define ses2_Pin GPIO_PIN_15
+#define ses2_GPIO_Port GPIOB
+#define ses6_Pin GPIO_PIN_6
+#define ses6_GPIO_Port GPIOC
+#define ses7_Pin GPIO_PIN_8
+#define ses7_GPIO_Port GPIOC
+#define ses8_Pin GPIO_PIN_9
+#define ses8_GPIO_Port GPIOC
 #define TMS_Pin GPIO_PIN_13
 #define TMS_GPIO_Port GPIOA
 #define TCK_Pin GPIO_PIN_14
 #define TCK_GPIO_Port GPIOA
 #define SWO_Pin GPIO_PIN_3
 #define SWO_GPIO_Port GPIOB
+#define Busy_Pin GPIO_PIN_8
+#define Busy_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

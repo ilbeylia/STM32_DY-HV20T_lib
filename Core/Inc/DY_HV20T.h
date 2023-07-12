@@ -29,6 +29,7 @@ typedef enum{
 	SARKI5,
 	SARKI6,
 	SARKI7,
+	SARKI8,
 }sarkı_set;
 
 

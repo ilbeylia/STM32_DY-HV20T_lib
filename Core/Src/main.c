@@ -21,6 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "DY_HV20T.h"
 
 /* USER CODE END Includes */
 
@@ -42,6 +43,7 @@
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
+dy_hv20t_config sound_module;
 
 /* USER CODE END PV */
 
@@ -88,6 +90,11 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+  dy_hv20t_init(&sound_module,ses1_GPIO_Port, ses1_Pin, ses2_GPIO_Port, ses2_Pin,
+		  	  	  ses3_GPIO_Port, ses3_Pin, ses4_GPIO_Port, ses4_Pin,
+				  ses5_GPIO_Port, ses5_Pin, ses6_GPIO_Port, ses6_Pin,
+				  ses7_GPIO_Port, ses7_Pin, ses8_GPIO_Port, ses8_Pin,
+				  Busy_GPIO_Port, Busy_Pin, Mode3);
 
   /* USER CODE END 2 */
 
@@ -98,6 +105,9 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
+	  play_mp3(&sound_module, SARKI1);
+	  HAL_Delay(5000);
   }
   /* USER CODE END 3 */
 }
@@ -189,6 +199,8 @@ static void MX_USART2_UART_Init(void)
 static void MX_GPIO_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
+/* USER CODE BEGIN MX_GPIO_Init_1 */
+/* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOC_CLK_ENABLE();
@@ -200,7 +212,10 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, sound_1_Pin|sound_2_Pin|sound_3_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, ses5_Pin|ses6_Pin|ses7_Pin|ses8_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, ses1_Pin|ses4_Pin|ses3_Pin|ses2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : B1_Pin */
   GPIO_InitStruct.Pin = B1_Pin;
@@ -215,19 +230,28 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
 
+  /*Configure GPIO pins : ses5_Pin ses6_Pin ses7_Pin ses8_Pin */
+  GPIO_InitStruct.Pin = ses5_Pin|ses6_Pin|ses7_Pin|ses8_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : ses1_Pin ses4_Pin ses3_Pin ses2_Pin */
+  GPIO_InitStruct.Pin = ses1_Pin|ses4_Pin|ses3_Pin|ses2_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
   /*Configure GPIO pin : Busy_Pin */
   GPIO_InitStruct.Pin = Busy_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(Busy_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : sound_1_Pin sound_2_Pin sound_3_Pin */
-  GPIO_InitStruct.Pin = sound_1_Pin|sound_2_Pin|sound_3_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
-
+/* USER CODE BEGIN MX_GPIO_Init_2 */
+/* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */
