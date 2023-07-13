@@ -61,117 +61,164 @@ void dy_hv20t_init(		dy_hv20t_config* dy_hv20t_config,
 
 void play_mp3(dy_hv20t_config* dy_hv20t_config, uint16_t sarkı){
 
-	if (0 != HAL_GPIO_ReadPin(dy_hv20t_config->Busy_GPIOx, dy_hv20t_config->Busy_GPIO_Pin)){
+	if (dy_hv20t_config->mode_set.mode == Mode3){
 
-		switch (sarkı){
+		if (0 != HAL_GPIO_ReadPin(dy_hv20t_config->Busy_GPIOx, dy_hv20t_config->Busy_GPIO_Pin)){
 
-			case SARKI1:
-				//HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET); // test için
+			switch (sarkı){
 
-				HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_RESET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
-				break;
+				case SARKI1:
+					//HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET); // test için
 
-			case SARKI2:
+					HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_RESET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
+					break;
 
-				HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_RESET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
-				break;
+				case SARKI2:
 
-			case SARKI3:
+					HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_RESET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
+					break;
 
-				HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_RESET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
+				case SARKI3:
 
-				break;
+					HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_RESET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
 
-			case SARKI4:
+					break;
 
-				HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_RESET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
+				case SARKI4:
 
-				break;
+					HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_RESET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
 
-			case SARKI5:
+					break;
 
-				HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_RESET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
+				case SARKI5:
 
-				break;
+					HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_RESET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
 
-			case SARKI6:
+					break;
 
-				HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_RESET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
+				case SARKI6:
 
-				break;
+					HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_RESET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
 
-			case SARKI7:
+					break;
 
-				HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_RESET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
+				case SARKI7:
 
-				break;
+					HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_RESET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
 
-			case SARKI8:
+					break;
 
-				HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_RESET);
+				case SARKI8:
 
-				break;
+					HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_RESET);
+
+					break;
+			}
+
 		}
-
 	}
 }
 
+void stop_mp3(dy_hv20t_config* dy_hv20t_config, uint16_t sarkı){
+
+	if (dy_hv20t_config->mode_set.mode == Mode3){
+
+		if (1 != HAL_GPIO_ReadPin(dy_hv20t_config->Busy_GPIOx, dy_hv20t_config->Busy_GPIO_Pin)){
+
+			switch (sarkı) {
+				case SARKI1:
+					HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
+					break;
+
+				case SARKI2:
+					HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
+					break;
+
+				case SARKI3:
+					HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
+					break;
+
+				case SARKI4:
+					HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
+					break;
+
+				case SARKI5:
+					HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
+					break;
+
+				case SARKI6:
+					HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
+					break;
+
+				case SARKI7:
+					HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
+					break;
+
+				case SARKI8:
+					HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
+					break;
+				default:
+					break;
+			}
+		}
+	}
+}
 
 
 

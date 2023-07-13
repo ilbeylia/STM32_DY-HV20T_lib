@@ -63,6 +63,7 @@ typedef struct{
 
 	struct{
 		uint16_t mode;
+
 	}mode_set;
 
 }dy_hv20t_config;
@@ -90,6 +91,7 @@ void dy_hv20t_init(	dy_hv20t_config* dy_hv20t_config,
 
 
 void play_mp3(dy_hv20t_config* dy_hv20t_config, uint16_t sarkı);
+void stop_mp3(dy_hv20t_config* dy_hv20t_config, uint16_t sarkı);
 
 
 
