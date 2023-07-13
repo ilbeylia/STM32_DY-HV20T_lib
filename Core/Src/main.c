@@ -107,8 +107,10 @@ int main(void)
     /* USER CODE BEGIN 3 */
 
 	  play_mp3(&sound_module, SARKI1);
-	  HAL_Delay(5000);
-	  stop_mp3(&sound_module, SARKI1);
+	  HAL_Delay(300);
+
+
+
 
 
 
