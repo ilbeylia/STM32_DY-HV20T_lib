@@ -66,7 +66,7 @@ void play_mp3(dy_hv20t_config* dy_hv20t_config, uint16_t sarkı){
 		switch (sarkı){
 
 			case SARKI1:
-				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET); // test için
+				//HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET); // test için
 
 				HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_RESET);
 				HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
@@ -170,9 +170,6 @@ void play_mp3(dy_hv20t_config* dy_hv20t_config, uint16_t sarkı){
 		}
 
 	}
-
-
-
 }
 
 
