@@ -22,15 +22,15 @@ typedef enum {	//DP pin select
 }control_mode;
 
 typedef enum{
-	SARKI1,
-	SARKI2,
-	SARKI3,
-	SARKI4,
-	SARKI5,
-	SARKI6,
-	SARKI7,
-	SARKI8,
-}sarkı_set;
+	Music1,
+	Music2,
+	Music3,
+	Music4,
+	Music5,
+	Music6,
+	Music7,
+	Music8,
+}Music_set;
 
 
 typedef struct{
@@ -90,8 +90,8 @@ void dy_hv20t_init(	dy_hv20t_config* dy_hv20t_config,
 						uint16_t mode);
 
 
-void play_mp3(dy_hv20t_config* dy_hv20t_config, uint16_t sarkı);
-void stop_mp3(dy_hv20t_config* dy_hv20t_config, uint16_t sarkı);
+void play_mp3(dy_hv20t_config* dy_hv20t_config, uint16_t* Music, uint16_t size);
+void stop_mp3(dy_hv20t_config* dy_hv20t_config, uint16_t music);
 
 
 

@@ -45,6 +45,7 @@ UART_HandleTypeDef huart2;
 /* USER CODE BEGIN PV */
 dy_hv20t_config sound_module;
 
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -106,7 +107,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-	  play_mp3(&sound_module, SARKI1);
+	  play_mp3(&sound_module, Music1,1);
 	  HAL_Delay(300);
 
 
