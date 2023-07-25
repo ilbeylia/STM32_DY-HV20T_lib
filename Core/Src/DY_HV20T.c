@@ -67,182 +67,105 @@ void play_mp3(dy_hv20t_config* dy_hv20t_config, uint16_t* Music, uint16_t size){
 
 		if (dy_hv20t_config->mode_set.mode == Mode1){
 
-				if (Music[0] == 1){
-					HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
-				}
-				if (Music[0] == 0){
-					HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_RESET);
-				}
-				if (Music[1] == 1){
-					HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
-				}
-				if (Music[1] == 1){
-					HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_RESET);
-				}
-				if (Music[2] == 1){
-					HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
-				}
-				if (Music[2] == 1){
-					HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_RESET);
-				}
-				if (Music[3] == 1){
-					HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
-				}
-				if (Music[3] == 1){
-					HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_RESET);
-				}
-				if (Music[4] == 1){
-					HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
-				}
-				if (Music[4] == 0){
-					HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_RESET);
-				}
-				if (Music[5] == 1){
-					HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
-				}
-				if (Music[5] == 1){
-					HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_RESET);
-				}
-				if (Music[6] == 1){
-					HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
-				}
-				if (Music[6] == 1){
-					HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_RESET);
-				}
-				if (Music[7] == 1){
-					HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
-				}
-				if (Music[7] == 1){
-					HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_RESET);
-				}
-		}
+				if (Music[0] == 1) HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
+				else if (Music[0] == 0) HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_RESET);
 
+				if (Music[1] == 1)HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
+				else if (Music[1] == 0)HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_RESET);
 
+				if (Music[2] == 1)HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
+				else if (Music[2] == 0)HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_RESET);
 
+				if (Music[3] == 1)HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
+				else if (Music[3] == 0)HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_RESET);
 
+				if (Music[4] == 1)HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
+				else if (Music[4] == 0)HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_RESET);
 
+				if (Music[5] == 1)HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
+				else if (Music[5] == 0)HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_RESET);
 
+				if (Music[6] == 1)HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
+				else if (Music[6] == 0)HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_RESET);
 
+				if (Music[7] == 1) HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
+				else if (Music[7] == 0) HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_RESET);
 
-	}
-
-
-
-	/*************** For Mode3 ***************/
-
-	else if (dy_hv20t_config->mode_set.mode == Mode3){
-
-		if (0 != HAL_GPIO_ReadPin(dy_hv20t_config->Busy_GPIOx, dy_hv20t_config->Busy_GPIO_Pin)){
-
-			switch (Music[0]){
-
-				case Music1:
-					//HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET); // test için
-
-					HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_RESET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
-					break;
-
-				case Music2:
-
-					HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_RESET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
-					break;
-
-				case Music3:
-
-					HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_RESET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
-
-					break;
-
-				case Music4:
-
-					HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_RESET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
-
-					break;
-
-				case Music5:
-
-					HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_RESET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
-
-					break;
-
-				case Music6:
-
-					HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_RESET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
-
-					break;
-
-				case Music7:
-
-					HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_RESET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
-
-					break;
-
-				case Music8:
-
-					HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
-					HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_RESET);
-
-					break;
-			}
+				HAL_Delay(100);
 
 		}
 	}
 }
+
+
+//void play_mp3(dy_hv20t_config* dy_hv20t_config, uint16_t Music){
+//
+//	if (Music != NULL){
+//		/*************** For Mode3 ***************/
+//
+//		else if (dy_hv20t_config->mode_set.mode == Mode3){
+//
+//			if (0 != HAL_GPIO_ReadPin(dy_hv20t_config->Busy_GPIOx, dy_hv20t_config->Busy_GPIO_Pin)){
+//
+//				switch (Music){
+//
+//					case Music1:
+//
+//						HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_RESET);
+//						break;
+//
+//					case Music2:
+//
+//						HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_RESET);
+//
+//						break;
+//
+//					case Music3:
+//
+//						HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_RESET);
+//
+//
+//						break;
+//
+//					case Music4:
+//
+//						HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_RESET);
+//
+//
+//						break;
+//
+//					case Music5:
+//
+//						HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_RESET);
+//
+//
+//						break;
+//
+//					case Music6:
+//
+//						HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_RESET);
+//
+//
+//						break;
+//
+//					case Music7:
+//
+//						HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_RESET);
+//
+//						break;
+//
+//					case Music8:
+//
+//						HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_RESET);
+//
+//						break;
+//				}
+//
+//			}
+//		}
+//	}
+//}
+
 
 void stop_mp3(dy_hv20t_config* dy_hv20t_config, uint16_t Music){
 
@@ -250,6 +173,14 @@ void stop_mp3(dy_hv20t_config* dy_hv20t_config, uint16_t Music){
 
 		if (1 != HAL_GPIO_ReadPin(dy_hv20t_config->Busy_GPIOx, dy_hv20t_config->Busy_GPIO_Pin)){
 
+//			HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);
+//			HAL_GPIO_WritePin(dy_hv20t_config->ses2_GPIOx, dy_hv20t_config->ses2_GPIO_Pin, GPIO_PIN_SET);
+//			HAL_GPIO_WritePin(dy_hv20t_config->ses3_GPIOx, dy_hv20t_config->ses3_GPIO_Pin, GPIO_PIN_SET);
+//			HAL_GPIO_WritePin(dy_hv20t_config->ses4_GPIOx, dy_hv20t_config->ses4_GPIO_Pin, GPIO_PIN_SET);
+//			HAL_GPIO_WritePin(dy_hv20t_config->ses5_GPIOx, dy_hv20t_config->ses5_GPIO_Pin, GPIO_PIN_SET);
+//			HAL_GPIO_WritePin(dy_hv20t_config->ses6_GPIOx, dy_hv20t_config->ses6_GPIO_Pin, GPIO_PIN_SET);
+//			HAL_GPIO_WritePin(dy_hv20t_config->ses7_GPIOx, dy_hv20t_config->ses7_GPIO_Pin, GPIO_PIN_SET);
+//			HAL_GPIO_WritePin(dy_hv20t_config->ses8_GPIOx, dy_hv20t_config->ses8_GPIO_Pin, GPIO_PIN_SET);
 			switch (Music) {
 				case Music1:
 					HAL_GPIO_WritePin(dy_hv20t_config->ses1_GPIOx, dy_hv20t_config->ses1_GPIO_Pin, GPIO_PIN_SET);

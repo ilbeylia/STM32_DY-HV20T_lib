@@ -44,8 +44,9 @@ UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 dy_hv20t_config sound_module;
-
-
+uint16_t music1[8] = {1,1,1,1,1,1,1,0};  //TEST
+uint16_t music2[8] = {1,1,1,1,1,1,0,1};
+uint16_t music3[8] = {1,1,1,1,1,1,0,0};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -77,6 +78,11 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
+  dy_hv20t_init(&sound_module,ses1_GPIO_Port, ses1_Pin, ses2_GPIO_Port, ses2_Pin,
+		  	  	  ses3_GPIO_Port, ses3_Pin, ses4_GPIO_Port, ses4_Pin,
+				  ses5_GPIO_Port, ses5_Pin, ses6_GPIO_Port, ses6_Pin,
+				  ses7_GPIO_Port, ses7_Pin, ses8_GPIO_Port, ses8_Pin,
+				  Busy_GPIO_Port, Busy_Pin, Mode1);
 
   /* USER CODE END Init */
 
@@ -91,11 +97,10 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  dy_hv20t_init(&sound_module,ses1_GPIO_Port, ses1_Pin, ses2_GPIO_Port, ses2_Pin,
-		  	  	  ses3_GPIO_Port, ses3_Pin, ses4_GPIO_Port, ses4_Pin,
-				  ses5_GPIO_Port, ses5_Pin, ses6_GPIO_Port, ses6_Pin,
-				  ses7_GPIO_Port, ses7_Pin, ses8_GPIO_Port, ses8_Pin,
-				  Busy_GPIO_Port, Busy_Pin, Mode3);
+
+
+
+  play_mp3(&sound_module, music2, sizeof(music2));
 
   /* USER CODE END 2 */
 
@@ -107,8 +112,9 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-	  play_mp3(&sound_module, Music1,1);
-	  HAL_Delay(300);
+
+
+
 
 
 

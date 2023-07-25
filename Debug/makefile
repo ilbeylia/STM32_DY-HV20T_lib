@@ -60,8 +60,8 @@ all: main-build
 main-build: STM32_DY-HV20T.elf secondary-outputs
 
 # Tool invocations
-STM32_DY-HV20T.elf STM32_DY-HV20T.map: $(OBJS) $(USER_OBJS) D:\Ilbeyli\STM32_DY-HV20T\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "STM32_DY-HV20T.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Ilbeyli\STM32_DY-HV20T\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_DY-HV20T.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+STM32_DY-HV20T.elf STM32_DY-HV20T.map: $(OBJS) $(USER_OBJS) C:\Users\ilbeyli\Desktop\Libraries_Created\STM32_DY-HV20T_lib\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "STM32_DY-HV20T.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\ilbeyli\Desktop\Libraries_Created\STM32_DY-HV20T_lib\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_DY-HV20T.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
